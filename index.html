@@ -6,6 +6,7 @@
 <title>Flame Creative</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 :root{
 --bg:#0d0d0d;
@@ -37,7 +38,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 10%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.8);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -48,13 +49,8 @@ align-items:center;
 gap:10px;
 }
 
-.logo img{
-height:40px;
-}
-
-.logo h2{
-color:var(--purple);
-}
+.logo img{height:40px;}
+.logo h2{color:var(--purple);}
 
 nav ul{
 display:flex;
@@ -68,9 +64,7 @@ color:white;
 transition:.3s;
 }
 
-nav ul li a:hover{
-color:var(--purple);
-}
+nav ul li a:hover{color:var(--purple);}
 
 /* HERO */
 .hero{
@@ -83,25 +77,11 @@ text-align:center;
 padding:0 10%;
 }
 
-.hero h1{
-font-size:55px;
-margin-bottom:20px;
-}
+.hero h1{font-size:55px;margin-bottom:20px;}
+.hero span{color:var(--purple);}
+.hero p{color:var(--gray);margin-bottom:40px;max-width:600px;}
 
-.hero span{
-color:var(--purple);
-}
-
-.hero p{
-color:var(--gray);
-margin-bottom:40px;
-max-width:600px;
-}
-
-.hero-buttons{
-display:flex;
-gap:20px;
-}
+.hero-buttons{display:flex;gap:20px;}
 
 .btn{
 padding:12px 30px;
@@ -116,44 +96,9 @@ transition:.4s;
 background:var(--purple);
 box-shadow:0 0 20px var(--purple);
 }
-/* STATS SECTION */
-.stats {
-background: #111;
-text-align: center;
-}
 
-.stats-container {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-gap: 40px;
-}
-
-.stat-box {
-padding: 40px 20px;
-border-radius: 15px;
-transition: .4s;
-}
-
-.stat-box:hover {
-box-shadow: 0 0 20px var(--purple);
-transform: translateY(-8px);
-}
-
-.stat-number {
-font-size: 45px;
-color: var(--purple);
-font-weight: bold;
-}
-
-.stat-text {
-color: var(--gray);
-margin-top: 10px;
-font-size: 18px;
-}
-/* SECTIONS */
-section{
-padding:100px 10%;
-}
+/* SECTION */
+section{padding:100px 10%;}
 
 .section-title{
 text-align:center;
@@ -161,26 +106,53 @@ font-size:40px;
 margin-bottom:60px;
 }
 
-.section-title span{
-color:var(--purple);
+.section-title span{color:var(--purple);}
+
+/* STATS */
+.stats-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+text-align:center;
 }
 
-/* AUTO SLIDER - TRUE INFINITE */
-.slider{
-overflow:hidden;
-position:relative;
+.stat-box{
+background:#111;
+padding:40px 20px;
+border-radius:15px;
+transition:.4s;
 }
+
+.stat-box:hover{
+box-shadow:0 0 20px var(--purple);
+transform:translateY(-8px);
+}
+
+.stat-number{
+font-size:45px;
+color:var(--purple);
+font-weight:bold;
+}
+
+.stat-text{
+color:var(--gray);
+margin-top:10px;
+}
+
+/* SLIDER COMMON */
+.slider{overflow:hidden;}
 
 .slide-track{
 display:flex;
-width:calc(250px * 12);
+width:calc(350px * 12);
 animation:scroll 30s linear infinite;
 }
 
+.slider:hover .slide-track{
+animation-play-state:paused;
+}
+
 .slide-track img{
-width:250px;
-height:150px;
-object-fit:cover;
 margin-right:20px;
 border-radius:15px;
 transition:.4s;
@@ -191,13 +163,49 @@ transform:scale(1.08);
 box-shadow:0 0 20px var(--purple);
 }
 
-.slider:hover .slide-track{
-animation-play-state:paused;
-}
-
 @keyframes scroll{
 0%{transform:translateX(0);}
-100%{transform:translateX(calc(-250px * 6));}
+100%{transform:translateX(calc(-350px * 6));}
+}
+
+/* THUMBNAILS */
+#thumbnails .slide-track img{
+width:350px;
+height:200px;
+object-fit:cover;
+}
+
+/* LOGOS */
+#logos .slide-track img{
+width:250px;
+height:250px;
+object-fit:contain;
+background:#111;
+padding:10px;
+}
+
+/* REELS */
+#reels .slide-track img{
+width:220px;
+height:390px;
+object-fit:cover;
+border-radius:20px;
+}
+
+/* POSTERS */
+#posters .slide-track img{
+width:320px;
+height:320px;
+object-fit:contain;
+background:#111;
+padding:10px;
+}
+
+/* BANNERS */
+#banners .slide-track img{
+width:350px;
+height:200px;
+object-fit:cover;
 }
 
 /* REVIEWS */
@@ -211,6 +219,7 @@ gap:30px;
 background:#111;
 padding:30px;
 border-radius:15px;
+text-align:center;
 transition:.4s;
 }
 
@@ -218,13 +227,20 @@ transition:.4s;
 box-shadow:0 0 20px var(--purple);
 }
 
-.review-card p{
-color:var(--gray);
+.review-card img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
 margin-bottom:15px;
 }
 
-.review-card h4{
-color:var(--purple);
+.review-card h4{color:var(--purple);}
+.review-card span{
+color:var(--gray);
+font-size:14px;
+display:block;
+margin-top:5px;
 }
 
 /* PRICING */
@@ -245,11 +261,6 @@ transition:.4s;
 .price-card:hover{
 transform:translateY(-10px);
 box-shadow:0 0 20px var(--purple);
-}
-
-.price-card h3{
-color:var(--purple);
-margin-bottom:20px;
 }
 
 /* CONTACT */
@@ -286,147 +297,110 @@ padding:30px;
 background:#111;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:38px;}
-.slide-track img{
-width:200px;
-height:120px;
-}
-}
-/* SOCIAL FOOTER */
-.social-icons{
-margin-top:20px;
-display:flex;
-justify-content:center;
-gap:25px;
-}
-
 .social-icons a{
 color:white;
-font-size:24px;
+margin:0 10px;
+font-size:20px;
 transition:.3s;
 }
 
-.social-icons a:hover{
-color:var(--purple);
-transform:scale(1.2);
-text-shadow:0 0 15px var(--purple);
-}
-/* FLOATING SOCIAL BAR */
-.floating-social {
-position: fixed;
-bottom: 20px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-gap: 20px;
-background: rgba(0,0,0,0.8);
-padding: 12px 25px;
-border-radius: 50px;
-backdrop-filter: blur(10px);
-z-index: 999;
-box-shadow: 0 0 20px rgba(160,32,240,0.3);
+.social-icons a:hover{color:var(--purple);}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero h1{font-size:36px;}
+.section-title{font-size:26px;}
+
+.slide-track{
+width:calc(250px * 12);
 }
 
-/* ICON STYLE */
-.floating-social a {
-color: white;
-font-size: 22px;
-transition: 0.3s;
-animation: bounce 2s infinite;
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(calc(-250px * 6));}
 }
 
-/* HOVER EFFECT */
-.floating-social a:hover {
-color: var(--purple);
-transform: scale(1.3);
-text-shadow: 0 0 15px var(--purple);
+#thumbnails .slide-track img,
+#banners .slide-track img{
+width:250px;
+height:150px;
 }
 
-/* BOUNCE ANIMATION */
-@keyframes bounce {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-6px); }
+#posters .slide-track img{
+width:250px;
+height:250px;
+}
+
+#reels .slide-track img{
+width:180px;
+height:320px;
+}
+
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
 <div class="logo">
-<img src="your-logo.png" alt="logo">
+<img src="your-logo.png">
 <h2>Flame Creative</h2>
 </div>
-
 <ul>
 <li><a href="#thumbnails">Thumbnails</a></li>
 <li><a href="#logos">Logos</a></li>
 <li><a href="#reels">Reels</a></li>
 <li><a href="#posters">Posters</a></li>
+<li><a href="#banners">Banners</a></li>
 <li><a href="#reviews">Reviews</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Design That Makes Brands <span>Impossible To Ignore</span></h1>
 <p>High-impact thumbnails, logos & banners designed to grow your brand.</p>
-
 <div class="hero-buttons">
 <a href="#thumbnails" class="btn">View My Work</a>
 <a href="#contact" class="btn">Hire Me</a>
 </div>
 </section>
-<!-- STATS SECTION -->
-<section class="stats">
+
+<!-- STATS -->
+<section>
 <h2 class="section-title">My <span>Achievements</span></h2>
-
 <div class="stats-container">
-
 <div class="stat-box">
 <div class="stat-number" data-target="150">0</div>
 <div class="stat-text">Thumbnails Created</div>
 </div>
-
 <div class="stat-box">
 <div class="stat-number" data-target="50">0</div>
 <div class="stat-text">Logos Delivered</div>
 </div>
-
 <div class="stat-box">
 <div class="stat-number" data-target="30">0</div>
 <div class="stat-text">Happy Clients</div>
 </div>
-
 <div class="stat-box">
-<div class="stat-number" data-target="2" data-type="years">0</div>
-<div class="stat-text">Experience</div>
+<div class="stat-number" data-target="2">0</div>
+<div class="stat-text">Years Experience</div>
 </div>
-
 </div>
 </section>
+
 <!-- THUMBNAILS -->
 <section id="thumbnails">
 <h2 class="section-title">YouTube <span>Thumbnails</span></h2>
 <div class="slider">
 <div class="slide-track">
-<img src="thumb1.jpg">
-<img src="thumb2.jpg">
-<img src="thumb3.jpg">
-<img src="thumb4.jpg">
-<img src="thumb5.jpg">
-<img src="thumb6.jpg">
-<img src="thumb7.jpg">
-<!-- DUPLICATE FOR INFINITE LOOP -->
-<img src="thumb1.jpg">
-<img src="thumb2.jpg">
-<img src="thumb3.jpg">
-<img src="thumb4.jpg">
-<img src="thumb5.jpg">
-<img src="thumb6.jpg">
+<img src="thumb1.jpg"><img src="thumb2.jpg"><img src="thumb3.jpg"><img src="thumb4.jpg"><img src="thumb5.jpg"><img src="thumb6.jpg"><img src="thumb7.jpg">
+<img src="thumb1.jpg"><img src="thumb2.jpg"><img src="thumb3.jpg"><img src="thumb4.jpg"><img src="thumb5.jpg"><img src="thumb6.jpg"><img src="thumb7.jpg">
 </div>
 </div>
 </section>
@@ -436,87 +410,68 @@ text-shadow: 0 0 15px var(--purple);
 <h2 class="section-title">Creative <span>Logos</span></h2>
 <div class="slider">
 <div class="slide-track">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
-<img src="logo1.jpg">
+<img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg">
+<img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg"><img src="logo1.jpg">
 </div>
 </div>
 </section>
 
-<!-- REEL COVERS -->
+<!-- REELS -->
 <section id="reels">
 <h2 class="section-title">Reel <span>Covers</span></h2>
 <div class="slider">
 <div class="slide-track">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
-<img src="reel1.jpg">
+<img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg">
+<img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg"><img src="reel1.jpg">
 </div>
 </div>
 </section>
 
 <!-- POSTERS -->
 <section id="posters">
-<h2 class="section-title">Posters & <span>Banners</span></h2>
+<h2 class="section-title">Creative <span>Posters</span></h2>
 <div class="slider">
 <div class="slide-track">
-<img src="poster1.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-
-<img src="poster1.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
-<img src="poster2.jpg">
+<img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster1.jpg">
+<img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster5.jpg"><img src="poster1.jpg">
 </div>
 </div>
 </section>
 
-<!-- Rest Same (Reviews, Pricing, Contact, Footer) -->
-
-</body>
-</html>
+<!-- BANNERS -->
+<section id="banners">
+<h2 class="section-title">Creative <span>Banners</span></h2>
+<div class="slider">
+<div class="slide-track">
+<img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner2.jpg">
+<img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner1.jpg"><img src="banner2.jpg">
+</div>
+</div>
+</section>
 
 <!-- REVIEWS -->
 <section id="reviews">
 <h2 class="section-title">Client <span>Reviews</span></h2>
 <div class="reviews">
+
 <div class="review-card">
-<p>"Best thumbnail designer I've worked with. CTR doubled."</p>
-<h4>- YouTube Creator</h4>
-</div>
-<div class="review-card">
+<img src="client2.jpg">
 <p>"Very professional and creative work."</p>
-<h4>- Brand Owner</h4>
+<h4>YFYT</h4>
+<span>85K+ Subscribers</span>
 </div>
 <div class="review-card">
+<img src="client1.jpg">
+<p>"Best thumbnail designer I've worked with. CTR doubled."</p>
+<h4>God Spirtz</h4>
+<span>35K+ Subscribers</span>
+</div>
+<div class="review-card">
+<img src="client3.jpg">
 <p>"Amazing logos and fast delivery."</p>
-<h4>- Startup Founder</h4>
+<h4>Live Streamer</h4>
+<span>Gk Is 1M</span>
+<span>105K+ Subscribers</span>
 </div>
 </div>
 </section>
@@ -525,165 +480,65 @@ text-shadow: 0 0 15px var(--purple);
 <section id="pricing">
 <h2 class="section-title">Pricing <span>Plans</span></h2>
 <div class="pricing">
-<div class="price-card">
-<h3>Basic</h3>
-<p>Price:₹80</p>
-<p>1 Design</p>
-</div>
-<div class="price-card">
-<h3>Standard</h3>
-<p>Price:₹350</p>
-<p>Multiple Designs</p>
-</div>
-<div class="price-card">
-<h3>Monthly</h3>
-<p>Price:₹2000</p>
-<p>Ongoing Designs</p>
-</div>
+<div class="price-card"><h3>Basic</h3><p>₹80</p><p>1 Design</p></div>
+<div class="price-card"><h3>Standard</h3><p>₹350</p><p>Multiple Designs</p></div>
+<div class="price-card"><h3>Monthly</h3><p>₹2000</p><p>Ongoing Designs</p></div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
 <h2 class="section-title">Contact <span>Me</span></h2>
-
-<form id="contact-form" action="https://formspree.io/f/xdaljgek" method="POST">
-
+<form action="https://formspree.io/f/xdaljgek" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
-
 <input type="email" name="email" placeholder="Your Email" required>
-
 <textarea name="message" rows="5" placeholder="Project Details" required></textarea>
-
 <button type="submit">Send Message</button>
-
 </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
 <p>© 2026 Flame Creative. All Rights Reserved.</p>
-
 <div class="social-icons">
-
-<!-- WhatsApp -->
-<a href="https://wa.me/919310072655" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Discord -->
-<a href="https://discord.gg/66GHg6Dss4" target="_blank">
-<i class="fab fa-discord"></i>
-</a>
-
-<!-- Email -->
-<a href="mailto:gfxflame3@gmail.com">
-<i class="fas fa-envelope"></i>
-</a>
-
-<!-- Instagram -->
-<a href="https://instagram.com/flamegfx01" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
+<a href="https://wa.me/919310072655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://discord.gg/66GHg6Dss4" target="_blank"><i class="fab fa-discord"></i></a>
+<a href="mailto:gfxflame3@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://instagram.com/flamegfx01" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 </footer>
+
 <script>
-const counters = document.querySelectorAll('.stat-number');
-const speed = 100;
+const counters=document.querySelectorAll('.stat-number');
+let started=false;
 
-const animateCounters = () => {
-counters.forEach(counter => {
+function runCounters(){
+counters.forEach(counter=>{
+const target=+counter.getAttribute('data-target');
+let count=0;
+const increment=target/150;
 
-const updateCount = () => {
-const target = +counter.getAttribute('data-target');
-const type = counter.getAttribute('data-type');
-const count = +counter.innerText.replace('+','').replace(' Years','');
-const increment = target / speed;
-
-if(count < target){
-let value = Math.ceil(count + increment);
-
-if(type === "years"){
-counter.innerText = value + "+ Years";
-} else {
-counter.innerText = value + "+";
+function update(){
+count+=increment;
+if(count<target){
+counter.innerText=Math.ceil(count)+"+";
+requestAnimationFrame(update);
+}else{
+counter.innerText=target+"+";
 }
-
-setTimeout(updateCount, 20);
-} else {
-
-if(type === "years"){
-counter.innerText = target + "+ Years";
-} else {
-counter.innerText = target + "+";
 }
-
-}
-};
-
-updateCount();
+update();
 });
-};
+}
 
-let statsSection = document.querySelector('.stats');
-let started = false;
-
-window.addEventListener('scroll', () => {
-let sectionPos = statsSection.getBoundingClientRect().top;
-let screenPos = window.innerHeight;
-
-if(sectionPos < screenPos && !started){
-animateCounters();
-started = true;
+window.addEventListener("scroll",()=>{
+const stats=document.querySelector(".stats-container").getBoundingClientRect().top;
+if(stats<window.innerHeight-100 && !started){
+runCounters();
+started=true;
 }
 });
 </script>
-<!-- SUCCESS POPUP -->
-<div id="success-popup" style="
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%) scale(0);
-background:#111;
-padding:40px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 30px #a020f0;
-z-index:10000;
-transition:.4s;
-">
 
-<h2 style="color:#a020f0;margin-bottom:15px;">Message Sent Successfully! 🎉</h2>
-<p style="color:#aaa;">Thank you for contacting Flame Creative.</p>
-
-</div>
-<script>
-const form = document.getElementById("contact-form");
-const popup = document.getElementById("success-popup");
-
-form.addEventListener("submit", async function(e) {
-e.preventDefault();
-
-const formData = new FormData(form);
-
-const response = await fetch(form.action, {
-method: form.method,
-body: formData,
-headers: { 'Accept': 'application/json' }
-});
-
-if (response.ok) {
-popup.style.transform = "translate(-50%,-50%) scale(1)";
-form.reset();
-
-setTimeout(() => {
-window.location.href = "thankyou.html";
-}, 2500);
-
-} else {
-alert("Something went wrong. Please try again.");
-}
-});
-</script>
 </body>
 </html>
